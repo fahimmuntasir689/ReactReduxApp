@@ -1,10 +1,21 @@
+import { useGetTasksQuery } from "@/redux/api/baseApi";
+import TaskCard from "./TaskCard";
+import type { ITask } from "@/types";
 
 
 const Tasks = () => {
+    const { data, isLoading, isError } = useGetTasksQuery(undefined)
+    console.log(data, isLoading, isError)
+
+
     return (
         <div>
-            <h1>It is Tasks Page</h1>
-            
+            {
+
+
+                !isLoading && data.tasks.map((task: ITask) => <TaskCard key={task._id} task={task}></TaskCard>)
+            }
+
         </div>
     );
 };
