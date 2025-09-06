@@ -22,3 +22,5 @@ const Tasks = () => {
 
 export default Tasks;
 // some features are coming
+
+// app 2.0 is under construction
